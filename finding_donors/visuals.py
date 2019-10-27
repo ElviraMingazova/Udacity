@@ -23,7 +23,7 @@ def distribution(data, transformed = False):
     """
     
     # Create figure
-    fig = pl.figure(figsize = (11,5));
+    fig = pl.figure(figsize = (11,4));
 
     # Skewed feature plotting
     for i, feature in enumerate(['capital-gain','capital-loss']):
@@ -60,7 +60,7 @@ def evaluate(results, accuracy, f1):
     """
   
     # Create figure
-    fig, ax = pl.subplots(2, 3, figsize = (11,7))
+    fig, ax = pl.subplots(2, 3, figsize = (14,10))
 
     # Constants
     bar_width = 0.3
@@ -85,6 +85,13 @@ def evaluate(results, accuracy, f1):
     ax[1, 0].set_ylabel("Time (in seconds)")
     ax[1, 1].set_ylabel("Accuracy Score")
     ax[1, 2].set_ylabel("F-score")
+    
+#     ax[1, 0].set_xlabel("Training Set Size")
+#     ax[1, 1].set_xlabel("Training Set Size")
+#     ax[1, 2].set_xlabel("Training Set Size")
+#     ax[0, 0].set_xlabel("Training Set Size")
+#     ax[0, 1].set_xlabel("Training Set Size")
+#     ax[0, 2].set_xlabel("Training Set Size")
     
     # Add titles
     ax[0, 0].set_title("Model Training")
@@ -115,7 +122,7 @@ def evaluate(results, accuracy, f1):
     
     # Aesthetics
     pl.suptitle("Performance Metrics for Three Supervised Learning Models", fontsize = 16, y = 1.10)
-    pl.tight_layout()
+    pl.tight_layout(pad=2.5)
     pl.show()
     
 
